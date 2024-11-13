@@ -1,4 +1,4 @@
-package moreKotlinFundamentals
+package kotlinFundamentals
 
 // Define the Daypart enum class
 enum class Daypart {
