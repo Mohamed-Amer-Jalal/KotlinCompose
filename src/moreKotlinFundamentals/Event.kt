@@ -16,7 +16,7 @@ data class Event(
 )
 
 fun main() {
-    // Store all events in a List
+    // Store all events in a MutableList
     val events = mutableListOf(
         Event(title = "Wake up", description = "Time to get up", daypart = Daypart.MORNING, durationInMinutes = 0),
         Event(title = "Eat breakfast", daypart = Daypart.MORNING, durationInMinutes = 15),
@@ -26,12 +26,12 @@ fun main() {
         Event(title = "Check out latest Android Jetpack library", daypart = Daypart.EVENING, durationInMinutes = 45)
     )
 
-    // Print the count of events
-    println("Number of events scheduled: ${events.size}")
+    // Step 1: Filter the short events (duration < 60 minutes)
+    val shortEvents = events.filter { it.durationInMinutes < 60 }
 
-    // Optionally, add more events
-    events.add(Event(title = "Read a book", daypart = Daypart.EVENING, durationInMinutes = 30))
+    // Step 2: Count the number of short events
+    val shortEventCount = shortEvents.size
 
-    // Print the updated count of events
-    println("Number of events after adding a new one: ${events.size}")
+    // Print the result
+    println("You have $shortEventCount short events.")
 }
