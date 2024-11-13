@@ -15,7 +15,7 @@ data class Event(
     val durationInMinutes: Int
 )
 
-// Extension property to get the duration as a string
+/*// Extension property to get the duration as a string
 val Event.durationOfEvent: String get() = if (this.durationInMinutes < 60) "short" else "long"
 
 fun main() {
@@ -30,8 +30,7 @@ fun main() {
     println("Duration of first event of the day: ${events[0].durationOfEvent}")
     println("Duration of second event of the day: ${events[1].durationOfEvent}")
     println("Duration of third event of the day: ${events[2].durationOfEvent}")
-}
-
+}*/
 
 /*fun main() {
     // List of events
@@ -46,7 +45,7 @@ fun main() {
     //println("Last event of the day: ${events[events.size - 1].title}")
 }*/
 
-/*fun main() {
+fun main() {
     // Store all events in a MutableList
     val events = mutableListOf(
         Event(title = "Wake up", description = "Time to get up", daypart = Daypart.MORNING, durationInMinutes = 0),
@@ -69,4 +68,4 @@ fun main() {
     println("Morning: $morningCount events")
     println("Afternoon: $afternoonCount events")
     println("Evening: $eveningCount events")
-}*/
+}
