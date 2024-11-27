@@ -1,7 +1,7 @@
 package kotlinFundamentals
 
 // Define the Daypart enum class
-enum class Daypart {
+enum class DayPart {
     MORNING,
     AFTERNOON,
     EVENING
@@ -11,7 +11,7 @@ enum class Daypart {
 data class Event(
     val title: String,
     val description: String? = null,
-    val daypart: Daypart,
+    val dayPart: DayPart,
     val durationInMinutes: Int
 )
 
@@ -48,21 +48,21 @@ fun main() {
 fun main() {
     // Store all events in a MutableList
     val events = mutableListOf(
-        Event(title = "Wake up", description = "Time to get up", daypart = Daypart.MORNING, durationInMinutes = 0),
-        Event(title = "Eat breakfast", daypart = Daypart.MORNING, durationInMinutes = 15),
-        Event(title = "Learn about Kotlin", daypart = Daypart.AFTERNOON, durationInMinutes = 30),
-        Event(title = "Practice Compose", daypart = Daypart.AFTERNOON, durationInMinutes = 60),
-        Event(title = "Watch latest DevBytes video", daypart = Daypart.AFTERNOON, durationInMinutes = 10),
-        Event(title = "Check out latest Android Jetpack library", daypart = Daypart.EVENING, durationInMinutes = 45)
+        Event(title = "Wake up", description = "Time to get up", dayPart = DayPart.MORNING, durationInMinutes = 0),
+        Event(title = "Eat breakfast", dayPart = DayPart.MORNING, durationInMinutes = 15),
+        Event(title = "Learn about Kotlin", dayPart = DayPart.AFTERNOON, durationInMinutes = 30),
+        Event(title = "Practice Compose", dayPart = DayPart.AFTERNOON, durationInMinutes = 60),
+        Event(title = "Watch latest DevBytes video", dayPart = DayPart.AFTERNOON, durationInMinutes = 10),
+        Event(title = "Check out latest Android Jetpack library", dayPart = DayPart.EVENING, durationInMinutes = 45)
     )
 
     // Step 1: Group the events by their daypart
-    val groupedByDaypart = events.groupBy { it.daypart }
+    val groupedByDaypart = events.groupBy { it.dayPart }
 
     // Step 2: Count the number of events in each daypart
-    val morningCount = groupedByDaypart[Daypart.MORNING]?.size ?: 0
-    val afternoonCount = groupedByDaypart[Daypart.AFTERNOON]?.size ?: 0
-    val eveningCount = groupedByDaypart[Daypart.EVENING]?.size ?: 0
+    val morningCount = groupedByDaypart[DayPart.MORNING]?.size ?: 0
+    val afternoonCount = groupedByDaypart[DayPart.AFTERNOON]?.size ?: 0
+    val eveningCount = groupedByDaypart[DayPart.EVENING]?.size ?: 0
 
     // Step 3: Print the summary
     println("Morning: $morningCount events")
