@@ -10,7 +10,8 @@ suspend fun getForecast(): String {
 }
 
 suspend fun getTemperature(): String {
-    delay(1000)
+    delay(500)
+    throw AssertionError("Temperature is invalid")
     return "30\u00b0C"
 }
 
