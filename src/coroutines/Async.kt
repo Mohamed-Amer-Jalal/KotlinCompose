@@ -11,8 +11,9 @@ suspend fun getForecast(): String {
 
 suspend fun getTemperature(): String {
     delay(500)
-    throw AssertionError("Temperature is invalid")
-    return "30\u00b0C"
+    val isValid = false // Simulate a condition
+    if (!isValid) throw AssertionError("Temperature is invalid")
+    return "30\u00b0C" // This is now reachable if the condition is met
 }
 
 fun main() {
